@@ -1,19 +1,14 @@
-
-import './App.css'
-
+import Navbar from "./components/Navbar";
 function App() {
-  
-
   return (
-  
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.tsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        
-  )
+    <>
+      <Navbar />
+      <main>
+        <h1>Dev Stack</h1>
+        <p>Our technology collection</p>
+      </main>
+    </>
+  );
 }
 
-export default App
+export default App;
