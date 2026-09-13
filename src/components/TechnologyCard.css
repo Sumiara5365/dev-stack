@@ -169,3 +169,46 @@
 .add-stack-btn:active {
   transform: scale(0.98);
 }
+@media (max-width: 1024px) {
+  .technology-card {
+    padding: 20px;
+  }
+
+  .technology-card-top {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .technology-card {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .technology-card-top {
+    margin-bottom: 20px;
+  }
+
+  .technology-name {
+    font-size: 17px;
+  }
+
+  .technology-description {
+    font-size: 11px;
+    line-height: 1.6;
+  }
+
+  .technology-meta {
+    flex-wrap: wrap;
+    gap: 7px;
+  }
+
+  .technology-card-bottom {
+    width: 100%;
+  }
+
+  .add-stack-btn {
+    width: 100%;
+  }
+}
+

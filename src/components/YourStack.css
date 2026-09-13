@@ -134,3 +134,40 @@
 .remove-all-btn:hover {
   background: #fff5f5;
 }
+
+@media (max-width: 1024px) {
+  .stack-sidebar {
+    width: 100%;
+  }
+
+  .stack-items {
+    gap: 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  .stack-sidebar {
+    width: 100%;
+    padding: 18px;
+  }
+
+  .stack-item {
+    width: 100%;
+  }
+
+  .stack-item-info {
+    min-width: 0;
+  }
+
+  .stack-item-info h3 {
+    font-size: 11px;
+  }
+
+  .stack-item-info p {
+    font-size: 9px;
+  }
+
+  .remove-all-btn {
+    width: 100%;
+  }
+}
