@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import Banner from "./components/Banner";
 import TechnologyCard from "./components/TechnologyCard";
 import type { Technology } from "./types/technology";
+import YourStack from "./components/YourStack";
 import "./App.css";
 
 function App() {
@@ -37,6 +38,16 @@ function App() {
       technology,
     ]);
   };
+
+  const removeFromStack = (id: string) => {
+  setStack((previousStack) =>
+    previousStack.filter((item) => item.id !== id)
+  );
+};
+
+const removeAll = () => {
+  setStack([]);
+};
 
   return (
     <>
@@ -74,19 +85,11 @@ function App() {
               ))}
             </div>
 
-            <aside className="stack-sidebar">
-              <div className="stack-header">
-                <h2>Your Stack</h2>
-
-                <p>
-                  {stack.length} Technology Selected
-                </p>
-              </div>
-
-              <div className="empty-stack">
-                <p>Your stack is empty.</p>
-              </div>
-            </aside>
+           <YourStack
+  stack={stack}
+  onRemove={removeFromStack}
+  onRemoveAll={removeAll}
+/>
 
           </div>
         )}
