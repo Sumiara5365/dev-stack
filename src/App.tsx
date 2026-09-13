@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Navbar from "./components/Navbar";
 import Banner from "./components/Banner";
 import TechnologyCard from "./components/TechnologyCard";
@@ -24,29 +26,46 @@ function App() {
       });
   }, []);
 
-  const addToStack = (technology: Technology) => {
-    const alreadyAdded = stack.some(
-      (item) => item.id === technology.id
-    );
+const addToStack = (technology: Technology) => {
+  const alreadyAdded = stack.some(
+    (item) => item.id === technology.id
+  );
 
-    if (alreadyAdded) {
-      return;
-    }
+  if (alreadyAdded) {
+    toast.warning(`${technology.name} is already in your stack!`);
+    return;
+  }
 
-    setStack((previousStack) => [
-      ...previousStack,
-      technology,
-    ]);
-  };
+  setStack((previousStack) => [
+    ...previousStack,
+    technology,
+  ]);
+
+  toast.success(`${technology.name} added to your stack!`);
+};
 
   const removeFromStack = (id: string) => {
+  const technology = stack.find(
+    (item) => item.id === id
+  );
+
   setStack((previousStack) =>
     previousStack.filter((item) => item.id !== id)
   );
+
+  if (technology) {
+    toast.info(`${technology.name} removed from your stack.`);
+  }
 };
 
 const removeAll = () => {
+  if (stack.length === 0) {
+    return;
+  }
+
   setStack([]);
+
+  toast.info("All technologies removed from your stack.");
 };
 
   return (
@@ -94,6 +113,10 @@ const removeAll = () => {
           </div>
         )}
       </main>
+      
+      <ToastContainer />
+
+             
     </>
   );
 }
