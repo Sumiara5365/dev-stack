@@ -6,6 +6,7 @@ import Banner from "./components/Banner";
 import TechnologyCard from "./components/TechnologyCard";
 import type { Technology } from "./types/technology";
 import YourStack from "./components/YourStack";
+import Footer from "./components/Footer";
 import "./App.css";
 
 function App() {
@@ -113,7 +114,7 @@ const removeAll = () => {
           </div>
         )}
       </main>
-      
+      <Footer />
       <ToastContainer />
 
              
