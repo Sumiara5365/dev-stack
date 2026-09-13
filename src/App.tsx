@@ -7,6 +7,7 @@ import "./App.css";
 
 function App() {
   const [technologies, setTechnologies] = useState<Technology[]>([]);
+  const [stack, setStack] = useState<Technology[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -22,6 +23,21 @@ function App() {
       });
   }, []);
 
+  const addToStack = (technology: Technology) => {
+    const alreadyAdded = stack.some(
+      (item) => item.id === technology.id
+    );
+
+    if (alreadyAdded) {
+      return;
+    }
+
+    setStack((previousStack) => [
+      ...previousStack,
+      technology,
+    ]);
+  };
+
   return (
     <>
       <Navbar />
@@ -29,8 +45,13 @@ function App() {
 
       <main className="technology-container">
         <div className="section-heading">
-          <h1>Explore The  <span>Technologies</span></h1>
-          <p>Pick one Technology per category to build your ideal stack</p>
+          <h1>
+            Explore The <span>Technologies</span>
+          </h1>
+
+          <p>
+            Pick one Technology per category to build your ideal stack
+          </p>
         </div>
 
         {loading ? (
@@ -39,17 +60,33 @@ function App() {
           </div>
         ) : (
           <div className="technology-section">
-            
-            
+
             <div className="technology-grid">
               {technologies.map((technology) => (
                 <TechnologyCard
-                  key={technology.id}
-                  technology={technology}
-                />
+  key={technology.id}
+  technology={technology}
+  onAdd={addToStack}
+  isAdded={stack.some(
+    (item) => item.id === technology.id
+  )}
+/>
               ))}
             </div>
 
+            <aside className="stack-sidebar">
+              <div className="stack-header">
+                <h2>Your Stack</h2>
+
+                <p>
+                  {stack.length} Technology Selected
+                </p>
+              </div>
+
+              <div className="empty-stack">
+                <p>Your stack is empty.</p>
+              </div>
+            </aside>
 
           </div>
         )}

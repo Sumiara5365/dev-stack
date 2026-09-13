@@ -56,6 +56,58 @@ body {
   min-width: 0;
 }
 
+.stack-sidebar {
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 24px;
+  min-height: 320px;
+  position: sticky;
+  top: 100px;
+}
+
+.stack-header h2 {
+  margin: 0 0 8px;
+  font-size: 24px;
+  color: #111827;
+  text-align: left;
+}
+
+.stack-header p {
+  margin: 0;
+  color: #6b7280;
+  font-size: 14px;
+  text-align: left;
+}
+
+.empty-stack {
+  margin-top: 50px;
+  text-align: center;
+  color: #6b7280;
+  
+}
+
+.empty-stack p {
+  margin: 0 0 8px;
+  font-size: 16px;
+}
+
+.empty-stack span {
+  font-size: 14px;
+  color: #9ca3af;
+}
+
+
+
+.loading {
+  text-align: center;
+  padding: 50px;
+  font-size: 18px;
+  color: #6b7280;
+}
+
+
 
 
 
