@@ -1,5 +1,5 @@
 import type { Technology } from "../types/technology";
-
+import "./TechnologyCard.css";
 
 interface TechnologyCardProps {
   technology: Technology;
@@ -7,22 +7,47 @@ interface TechnologyCardProps {
 
 function TechnologyCard({ technology }: TechnologyCardProps) {
   return (
-    <div>
-      <img src={technology.icon} alt={technology.name} />
+     <div className="technology-card">
+      <div className="technology-card-top">
+        <img
+          className="technology-icon"
+          src={technology.icon}
+          alt={technology.name}
+        />
 
-      <span>{technology.badge}</span>
+        <span className="technology-badge">
+          {technology.badge}
+        </span>
+      </div>
 
-      <h2>{technology.name}</h2>
+      <h2 className="technology-name">
+        {technology.name}
+      </h2>
 
-      <p>{technology.description}</p>
+      <p className="technology-description">
+        {technology.description}
+      </p>
 
-      <span>{technology.category}</span>
-      <span>{technology.difficulty}</span>
+     <div className="technology-meta">
+  <span className="technology-chip">
+    {technology.category}
+  </span>
 
-      <p>⭐ {technology.rating}</p>
+ <span className="technology-chip">
+    {technology.difficulty}
+  </span>
 
-      <button>Add to Stack</button>
+   <span className="technology-rating">
+    ⭐ {technology.rating}
+  </span>
+</div>
+<div className="technology-card-bottom">
+  <button className="add-stack-btn">
+    Add to Stack
+  </button>
+</div>
     </div>
+    
   );
 }
 

@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import Banner from "./components/Banner";
 import TechnologyCard from "./components/TechnologyCard";
 import type { Technology } from "./types/technology";
+import "./App.css";
 
 function App() {
   const [technologies, setTechnologies] = useState<Technology[]>([]);
@@ -25,17 +26,31 @@ function App() {
     <>
       <Navbar />
       <Banner />
-      <main>
+
+      <main className="technology-container">
+        <div className="section-heading">
+          <h1>Explore The  <span>Technologies</span></h1>
+          <p>Pick one Technology per category to build your ideal stack</p>
+        </div>
+
         {loading ? (
-          <p>Loading technologies...</p>
+          <div className="loading">
+            <p>Loading technologies...</p>
+          </div>
         ) : (
-          <div>
-            {technologies.map((technology) => (
-              <TechnologyCard
-                key={technology.id}
-                technology={technology}
-              />
-            ))}
+          <div className="technology-section">
+            
+            
+            <div className="technology-grid">
+              {technologies.map((technology) => (
+                <TechnologyCard
+                  key={technology.id}
+                  technology={technology}
+                />
+              ))}
+            </div>
+
+
           </div>
         )}
       </main>

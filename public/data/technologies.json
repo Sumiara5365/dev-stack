@@ -47,7 +47,7 @@
     "description": "A simple and powerful programming language used in web development and data science.",
     "icon": "https://icon.icepanel.io/Technology/svg/Python.svg",
     "rating": 4.9,
-    "difficulty": "Beginner-Friendly",
+    "difficulty": "Advanced",
     "badge": "Popular"
   },
   {
@@ -77,7 +77,7 @@
     "description": "A utility-first CSS framework for creating modern responsive interfaces.",
     "icon": "https://icon.icepanel.io/Technology/svg/Tailwind-CSS.svg",
     "rating": 4.8,
-    "difficulty": "Beginner-Friendly",
+    "difficulty": "Intermediate",
     "badge": "Fast"
   },
   {
@@ -105,7 +105,7 @@
   "id": "express",
   "name": "Express.js",
   "category": "Backend",
-  "description": "A lightweight Node.js framework for building fast and scalable web applications and APIs.",
+  "description": "A lightweight Node.js framework for building fast  and APIs.",
   "icon": "https://icon.icepanel.io/Technology/svg/Express.svg",
   "rating": 4.7,
   "difficulty": "Intermediate",
@@ -115,7 +115,7 @@
   "id": "github",
   "name": "GitHub",
   "category": "Tools",
-  "description": "A platform for hosting code, collaborating on projects, and managing software development workflows.",
+  "description": "A platform for hosting code, collaborating on projects.",
   "icon": "https://icon.icepanel.io/Technology/svg/GitHub.svg",
   "rating": 4.8,
   "difficulty": "Beginner-Friendly",
